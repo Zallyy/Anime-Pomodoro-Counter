@@ -81,6 +81,7 @@ let onBreak = false
 const ResetTime = (countdown) => {
     countdown.ResetTime(countdownStart)
     progress.style.width = '0%'
+    countdown.initialMinutes = countdownStart
 }
 
 const TickTime = (countdown, timeSpent) => {
