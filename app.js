@@ -6,9 +6,11 @@ const shortBreakBtn = document.getElementById('short-break')
 const longBreakBtn = document.getElementById('long-break')
 const trashCanBtn = document.getElementById('trash-can')
 const bannerImgEl = document.getElementById('banner-img')
+const progress = document.getElementById('progress')
 
 class Time {
     constructor (hours, minutes, seconds) {
+        this.initialMinutes = minutes
         this.hours = hours
         this.minutes = minutes
         this.seconds = seconds
@@ -69,14 +71,16 @@ class Time {
 }
 
 // Globals
-let countdown = new Time(0,30,0)
+const countdownStart = 30
+let countdown = new Time(0,countdownStart,0)
 let timeSpent = new Time(0,0,0)
 let paused = true
 let clicked = false
 let onBreak = false
 
 const ResetTime = (countdown) => {
-    countdown.ResetTime(30)
+    countdown.ResetTime(countdownStart)
+    progress.style.width = '0%'
 }
 
 const TickTime = (countdown, timeSpent) => {
@@ -93,10 +97,18 @@ const StartTimeInterval = (clicked) => {
             if (countdown.time == '0:00') {
                 onBreak = false
                 alert('DING DING DING')
+                new Notification('DING DING DING')
                 paused = true
                 return
             }
             TickTime(countdown, timeSpent)
+            let currentPercent = (((countdown.initialMinutes * 60) - (countdown.minutes * 60 + countdown.seconds)) / (countdown.initialMinutes * 60) * 100)
+            console.log(currentPercent)
+            if (currentPercent > 100) {
+                progress.style.width = '0%'
+            } else {
+                progress.style.width = `${currentPercent}%`
+            }
             if (onBreak) {
                 timeSpent.seconds--
             }
@@ -138,8 +150,20 @@ shortBreakBtn.addEventListener('click', () => {
     onBreak = true
     startPauseBtn.innerHTML = 'Start'
     countdown.hours = 0 
-    countdown.minutes = 0
-    countdown.seconds = 5
+    countdown.minutes = 5
+    countdown.seconds = 0
+    countdown.initialMinutes = 5
+    RefreshDOM()
+})
+
+longBreakBtn.addEventListener('click', () => {
+    paused = true
+    onBreak = true
+    startPauseBtn.innerHTML = 'Start'
+    countdown.hours = 0 
+    countdown.minutes = 15
+    countdown.seconds = 0
+    countdown.initialMinutes = 15
     RefreshDOM()
 })
 
