@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/main.css">
     <title>Pomodoro Timer</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
             
             <div class="left">
                 <p>Time Spent: <span id="time-spent">0:00</span></p>
-                <div class="trash-can">
+                <div id='trash-can' class="trash-can">
                     <div class="trash-top"></div>
                     <div class="trash-bottom"></div>
                 </div>
@@ -21,14 +22,16 @@
             <div class="middle">
                 <h1 id="timer">30:00</h1>
                 <div class="buttons">
-                    <button class="start-pause" id="start-pause">Start</button>
-                    <button class="reset" id="reset">Reset</button>
+                    <button class="button" id="start-pause">Start</button>
+                    <button class="button" id="reset">Reset</button>
+                    <button class="button" id="short-break">Short Break</button>
+                    <button class="button" id="long-break">Long Break</button>
                 </div>
             </div>
 
             <div class="right">
                 <div class="container">
-                    <img class='banner-img' id='banner-img' src="" alt="banner-image" class="image">
+                    <img class='banner-img' id='banner-img' src="https://lewlewonics.github.io/BasicStartpage/images/14.jpg" alt="banner-image">
                 </div>
             </div>
 

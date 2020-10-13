@@ -1,0 +1,116 @@
+@import 'partials/_variables';
+@import 'partials/_buttons';
+
+@mixin flex-center-horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: $background-color;
+    font-family: $normal-font;
+    color: $text-color;
+    @include flex-center-horizontal;
+}
+
+.main-container {
+    // background: darkorange;
+    width: 80%;
+    height: 100%;
+    max-width: 1400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    & > h1 {
+        font-size: $title-size;
+        font-family: $fancy-font;
+    }
+    
+    .grid {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+        .left {
+            display: flex;
+            // background: darkorchid;
+
+            & > p {
+               font-size: 1.5em; 
+            }
+
+            .trash-can {
+                margin-left: 10px;
+                display: flex;
+                flex-direction: column;
+                .trash-top {
+                    background: $primary-color;
+                    height: 2px;
+                    width: 22px;
+                    border-radius: 5px;
+                    margin-bottom: 2px;
+                }
+                .trash-bottom {
+                    background: $primary-color;
+                    height: 27px;
+                    width: 18px;
+                    border-radius: 5px;
+                    margin-left: 2px;
+                }
+                &:hover .trash-bottom{
+                    cursor: pointer;
+                    background: lighten($primary-color, 20);
+                }
+                &:hover .trash-top{
+                    cursor: pointer;
+                    background: lighten($primary-color, 20);
+                }
+            }
+        }
+        .middle {
+            // background: darkblue;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            #timer {
+                font-size: 9em;
+                margin-top: -20%;
+            }
+            .buttons {
+                margin-top: 50px;
+            }
+        }
+        .right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .container {
+                margin-top: -20%;
+                background: pink;
+                width: 100%;
+                height: 500px;
+                position: relative;
+                border: 3px $primary-color solid;
+                img {
+                    border-radius: inherit;
+                    object-fit: cover;
+                    object-position: center;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+

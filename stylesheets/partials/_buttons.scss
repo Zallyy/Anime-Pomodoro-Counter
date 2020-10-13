@@ -1,0 +1,19 @@
+.button {
+    font-size: 1.2em;
+    padding: 7px 14px;
+    border-radius: 6px;
+    border: none;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: darken( $text-color, 20);
+}
+
+#start-pause {
+    background: $primary-color;
+}
+
+#start-pause:hover {
+    background: darken($text-color, 20);
+}

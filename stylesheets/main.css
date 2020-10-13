@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+.button {
+  font-size: 1.2em;
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #cccccc;
+}
+
+#start-pause {
+  background: #fbfcdb;
+}
+
+#start-pause:hover {
+  background: #cccccc;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background: #333333;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-container {
+  width: 80%;
+  height: 100%;
+  max-width: 1400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container > h1 {
+  font-size: 72px;
+  font-family: "Righteous", cursive;
+}
+
+.main-container .grid {
+  height: 100%;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr 1fr;
+      grid-template-columns: 1fr 4fr 1fr;
+}
+
+.main-container .grid .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-container .grid .left > p {
+  font-size: 1.5em;
+}
+
+.main-container .grid .left .trash-can {
+  margin-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-container .grid .left .trash-can .trash-top {
+  background: #fbfcdb;
+  height: 2px;
+  width: 22px;
+  border-radius: 5px;
+  margin-bottom: 2px;
+}
+
+.main-container .grid .left .trash-can .trash-bottom {
+  background: #fbfcdb;
+  height: 27px;
+  width: 18px;
+  border-radius: 5px;
+  margin-left: 2px;
+}
+
+.main-container .grid .left .trash-can:hover .trash-bottom {
+  cursor: pointer;
+  background: white;
+}
+
+.main-container .grid .left .trash-can:hover .trash-top {
+  cursor: pointer;
+  background: white;
+}
+
+.main-container .grid .middle {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-container .grid .middle #timer {
+  font-size: 9em;
+  margin-top: -20%;
+}
+
+.main-container .grid .middle .buttons {
+  margin-top: 50px;
+}
+
+.main-container .grid .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .grid .right .container {
+  margin-top: -20%;
+  background: pink;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  border: 3px #fbfcdb solid;
+}
+
+.main-container .grid .right .container img {
+  border-radius: inherit;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=main.css.map */

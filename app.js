@@ -2,6 +2,9 @@ const timeSpentEl = document.getElementById('time-spent')
 const timerEl = document.getElementById('timer')
 const startPauseBtn = document.getElementById('start-pause')
 const resetBtn = document.getElementById('reset')
+const shortBreakBtn = document.getElementById('short-break')
+const longBreakBtn = document.getElementById('long-break')
+const trashCanBtn = document.getElementById('trash-can')
 const bannerImgEl = document.getElementById('banner-img')
 
 class Time {
@@ -70,10 +73,10 @@ let countdown = new Time(0,30,0)
 let timeSpent = new Time(0,0,0)
 let paused = true
 let clicked = false
+let onBreak = false
 
-const ResetTime = (countdown, timeSpent) => {
+const ResetTime = (countdown) => {
     countdown.ResetTime(30)
-    timeSpent.ResetTime(0)
 }
 
 const TickTime = (countdown, timeSpent) => {
@@ -87,13 +90,24 @@ const StartTimeInterval = (clicked) => {
     }
     setInterval(() => {
         if (!paused) {
+            if (countdown.time == '0:00') {
+                onBreak = false
+                alert('DING DING DING')
+                paused = true
+                return
+            }
             TickTime(countdown, timeSpent)
+            if (onBreak) {
+                timeSpent.seconds--
+            }
             RefreshDOM()
         }
     }, 1000);
 }
 
 const RefreshDOM = () => {
+    countdown.CurrentTime() //Update time to the current time 
+    timeSpent.CurrentTime()
     timeSpentEl.innerHTML = timeSpent.time
     timerEl.innerHTML = countdown.time
 }
@@ -112,7 +126,24 @@ startPauseBtn.addEventListener('click', () =>  {
 })
 
 resetBtn.addEventListener('click', () => {
-    ResetTime(countdown, timeSpent)
+    paused = true
+    onBreak = false
+    ResetTime(countdown)
     startPauseBtn.innerHTML = 'Start'
+    RefreshDOM()
+})
+
+shortBreakBtn.addEventListener('click', () => {
+    paused = true
+    onBreak = true
+    startPauseBtn.innerHTML = 'Start'
+    countdown.hours = 0 
+    countdown.minutes = 0
+    countdown.seconds = 5
+    RefreshDOM()
+})
+
+trashCanBtn.addEventListener('click', () => {
+    timeSpent.ResetTime(0)
     RefreshDOM()
 })
