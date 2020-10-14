@@ -29,6 +29,7 @@ body {
     flex-direction: column;
     
     & > h1 {
+        padding: 0 5px;
         font-size: $title-size;
         font-family: $fancy-font;
         text-shadow: $text-shadow;
