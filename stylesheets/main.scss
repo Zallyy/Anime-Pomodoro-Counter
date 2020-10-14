@@ -133,3 +133,91 @@ body {
     }
 }
 
+@media (max-width: 1300px) {
+    .main-container {
+        width: 100%;
+    }
+    .grid {
+        width: 80%;
+        max-width: 800px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        .left {
+            margin-top: 15px;
+            .trash-can {
+                margin-left: 100px;
+                display: flex;
+                flex-direction: column;
+                .trash-top {
+                    background: $primary-color;
+                    height: 2px;
+                    width: 22px;
+                    border-radius: 5px;
+                    margin-bottom: 2px;
+                }
+                .trash-bottom {
+                    background: $primary-color;
+                    height: 27px;
+                    width: 18px;
+                    border-radius: 5px;
+                    margin-left: 2px;
+                }
+                &:hover .trash-bottom{
+                    cursor: pointer;
+                    background: lighten($primary-color, 20);
+                }
+                &:hover .trash-top{
+                    cursor: pointer;
+                    background: lighten($primary-color, 20);
+                }
+            }
+        }
+        .middle {
+            // background: darkblue;
+            height: 100%;            
+            .progress-bar {
+                margin-bottom: -20px !important;
+                position: relative;
+                width: 70%;
+                height: 5px;
+                background: darken($background-color, 5);
+                border-radius: 5px;
+
+                .progress {
+                    width: 0%;
+                    margin-bottom: 5px !important;
+                    height: 5px;
+                    background: $primary-color;
+                }
+            }
+            #timer {
+                font-size: 9em;
+                margin-top: 0 !important;
+                text-shadow: $text-shadow;
+            }
+            .buttons {
+                margin-top: 50px;
+                display: flex;
+            }
+        }
+        .right {
+            .container {
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+                margin-top: 0 !important;
+                background: pink;
+                width: 80% !important;
+                height: 200px !important;
+                position: relative;
+                border: 3px $text-color solid;
+                img {
+                    border-radius: inherit;
+                    object-fit: cover;
+                    object-position: top !important;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
