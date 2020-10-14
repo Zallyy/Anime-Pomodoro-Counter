@@ -31,6 +31,8 @@ body {
     & > h1 {
         font-size: $title-size;
         font-family: $fancy-font;
+        text-shadow: $text-shadow;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 89% 93%, 68% 95%, 51% 94%, 36% 98%, 27% 95%, 18% 91%, 0 99%);
     }
     
     .grid {
@@ -99,6 +101,7 @@ body {
             #timer {
                 font-size: 9em;
                 margin-top: -20%;
+                text-shadow: $text-shadow;
             }
             .buttons {
                 margin-top: 50px;
@@ -110,6 +113,7 @@ body {
             align-items: center;
 
             .container {
+                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
                 margin-top: -20%;
                 background: pink;
                 width: 100%;

@@ -3,10 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
 
 // COLORS
-$background-color: #333333;
+$background-color: #f3f3f3;
 $primary-color: #fbfcdb;
-$text-color: #ffffff;
+$text-color: #333;
 $progress-bar: #fbfcdb;
+$text-shadow: 0px 0px 0px 0px $background-color;
 
 // FONTS 
 $fancy-font: 'Righteous', cursive;

@@ -5,8 +5,12 @@ const resetBtn = document.getElementById('reset')
 const shortBreakBtn = document.getElementById('short-break')
 const longBreakBtn = document.getElementById('long-break')
 const trashCanBtn = document.getElementById('trash-can')
+const trashCanTop = document.getElementById('trash-top')
+const trashCanBot = document.getElementById('trash-bot')
 const bannerImgEl = document.getElementById('banner-img')
+const bannerContainer = document.getElementById('img-container')
 const progress = document.getElementById('progress')
+const titleEl = document.getElementById('title')
 
 class Time {
     constructor (hours, minutes, seconds) {

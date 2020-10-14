@@ -1,19 +1,22 @@
 .button {
-    font-size: 1.2em;
-    padding: 7px 14px;
+    color: $text-color;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    font-size: 1.3em;
+    padding: 10px 20px;
     border-radius: 6px;
     border: none;
 }
 
 .button:hover {
     cursor: pointer;
-    background: darken( $text-color, 20);
+    background: darken( $background-color, 20);
 }
 
 #start-pause {
     background: $primary-color;
+    color: $background-color;
 }
 
 #start-pause:hover {
-    background: darken($text-color, 20);
+    background: lighten($background-color, 20);
 }

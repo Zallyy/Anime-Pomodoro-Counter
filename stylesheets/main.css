@@ -1,23 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
 .button {
-  font-size: 1.2em;
-  padding: 7px 14px;
+  color: #333;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  font-size: 1.3em;
+  padding: 10px 20px;
   border-radius: 6px;
   border: none;
 }
 
 .button:hover {
   cursor: pointer;
-  background: #cccccc;
+  background: silver;
 }
 
 #start-pause {
   background: #fbfcdb;
+  color: #f3f3f3;
 }
 
 #start-pause:hover {
-  background: #cccccc;
+  background: white;
 }
 
 * {
@@ -28,9 +32,9 @@
 
 body {
   height: 100vh;
-  background: #333333;
+  background: #f3f3f3;
   font-family: "Roboto", sans-serif;
-  color: #ffffff;
+  color: #333;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -58,6 +62,9 @@ body {
 .main-container > h1 {
   font-size: 72px;
   font-family: "Righteous", cursive;
+  text-shadow: 0px 0px 0px 0px #f3f3f3;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 89% 93%, 68% 95%, 51% 94%, 36% 98%, 27% 95%, 18% 91%, 0 99%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 89% 93%, 68% 95%, 51% 94%, 36% 98%, 27% 95%, 18% 91%, 0 99%);
 }
 
 .main-container .grid {
@@ -138,7 +145,7 @@ body {
   position: relative;
   width: 70%;
   height: 5px;
-  background: #262626;
+  background: #e6e6e6;
   border-radius: 5px;
 }
 
@@ -151,6 +158,7 @@ body {
 .main-container .grid .middle #timer {
   font-size: 9em;
   margin-top: -20%;
+  text-shadow: 0px 0px 0px 0px #f3f3f3;
 }
 
 .main-container .grid .middle .buttons {
@@ -170,12 +178,14 @@ body {
 }
 
 .main-container .grid .right .container {
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   margin-top: -20%;
   background: pink;
   width: 100%;
   height: 500px;
   position: relative;
-  border: 3px #ffffff solid;
+  border: 3px #333 solid;
 }
 
 .main-container .grid .right .container img {
